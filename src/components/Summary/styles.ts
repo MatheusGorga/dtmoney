@@ -26,7 +26,7 @@ export const Container = styled.div`
             line-height: 3rem;
         }
 
-        &.highlitg{
+        &.highlight{
           background: var(--green);
           color: #FFF;
         }
