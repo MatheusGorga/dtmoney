@@ -10,12 +10,12 @@ interface Transaction {
     category: string;
     createdAt: string;
 }
-interface TransactionsProviderPros{
+interface TransactionsProviderProps{
     children: ReactNode;
 }
 export const TransactionsContext = createContext<Transaction[]>([]);
 
-export function TransactionsProvider({children}: TransactionsProviderPros){
+export function TransactionsProvider({children}: TransactionsProviderProps){
     const [ transactions, setTransactions] = useState<Transaction[]>([])
     useEffect(()=> {
       api.get('transactions')
@@ -24,7 +24,7 @@ export function TransactionsProvider({children}: TransactionsProviderPros){
 
   return(
       <TransactionsContext.Provider value={transactions}>
-               {children}
+            {children}
       </TransactionsContext.Provider>
   )
 }
